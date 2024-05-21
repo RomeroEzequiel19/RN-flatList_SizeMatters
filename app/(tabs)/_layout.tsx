@@ -4,6 +4,7 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -15,21 +16,28 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="index"
+        name="listaTareas"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+          title: 'Lista Tareas',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="list-status" color={color} size={26} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="contador"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          title: 'contador',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="contain" color={color} size={26} />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="listaAnimales"
+        options={{
+          title: 'Lista de Animales',
+          
         }}
       />
     </Tabs>
